@@ -1,0 +1,36 @@
+{
+    "variables": {
+        "aws_access_key": "",
+        "aws_secret_key": "",
+	"vpc_id ": "vpc-0244d2410a50a5b1f",
+        "subnet_id": "subnet-0edac0c0193578d52",
+        "app_name": "packer-mysql"
+    },
+    "builders": [
+        {
+            "ami_name": "packer-mysql-sa",
+            "ami_description": "AMI with java-react app",
+            "type": "amazon-ebs",
+            "access_key": "{{user `aws_access_key`}}",
+            "secret_key": "{{user `aws_secret_key`}}",
+            "region": "us-east-1",
+            "instance_type": "t2.micro",
+            "ssh_username": "ubuntu",
+            "associate_public_ip_address": "true",
+            "security_group_id":"sg-0831e267a4376280c",
+            "source_ami": "ami-04505e74c0741db8d",
+            "tags": {
+                "Name": "packer-mysql",
+                "OS Version": "ubuntu",
+                "Tool": "Packer"
+            }
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "pause_before": "10s",
+            "scripts": ["server-appscript.sh"]
+        }
+    ]
+}
