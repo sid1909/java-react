@@ -47,6 +47,8 @@ sudo apt install mysql-server -y
 sudo systemctl start mysql.service
 #sudo mysql
 echo "create database emp;" | sudo mysql
+echo "CREATE USER 'username1'@'localhost' IDENTIFIED BY 'password';" | sudo mysql
+echo "GRANT ALL ON *.* TO 'username1'@'localhost';" | sudo mysql
 #exit
 
 
