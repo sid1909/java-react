@@ -30,7 +30,7 @@
         {
             "type": "shell",
             "pause_before": "10s",
-            "scripts": ["server-appscript.sh"]
+            "scripts": ["./packer/server-appscript.sh"]
         }
     ]
 }
