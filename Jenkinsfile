@@ -5,6 +5,7 @@ pipeline {
 	     stage('AMI creation') {  
 	  steps {
           sh 'packer --version'
+		  sh 'ls'
           }
        }
       }
