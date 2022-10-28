@@ -18,7 +18,7 @@ data "aws_ami" "ubuntu" {
 
   filter {
     name   = "name"
-    values = ["packer-mysql-sac2"]
+    values = ["packer-mysql-sa"]
   }
 }
 
