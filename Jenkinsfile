@@ -12,9 +12,13 @@ pipeline {
 	       stage('terraform') {  
 	  steps {
          
-		  sh 'ls'
+		  withAWS(credentials: 'aws-cred') {
+		 
+		   sh 'ls'
 		  sh 'terraform init'
 		  sh 'terraform apply -auto-approve'
+		}
+		 
           }
        }
       }
