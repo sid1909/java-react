@@ -14,7 +14,7 @@ pipeline {
          
 		  sh 'ls'
 		  sh 'terraform init'
-		  sh 'terraform apply -f'
+		  sh 'terraform apply -y'
           }
        }
       }
